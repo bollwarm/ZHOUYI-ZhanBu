@@ -30,9 +30,9 @@ UYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge for 
  
 =head1 DESCRIPTION
  
-ZHOUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge for the future using YI's Gua(卦) or tuan（彖）info!
+  ZHOUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge for the future using YI's Gua(卦) or tuan（彖）info!
  
-ZHOUYI-ZhanPu  is not standardized. This module is far from complete.
+  ZHOUYI-ZhanPu  is not standardized. This module is far from complete.
  
  
 
