@@ -1,22 +1,15 @@
-ZHOUYI-ZhanPu
 
-
-
-# MD5Check
-MD5Check - A Tool using it for init Web files's md5 values of your site(or other dir), and check if it changed
-
-
-=head1 NAME
+=head1 ZHOUYI-ZhanPu
  
-MD5Check - Use it for init Web files's md5 values of your site(or other dir), and check if it changed.
+UYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge for the future using YI's Gua(卦) or tuan（彖）info!
  
  
 =head1 SYNOPSIS
  
-    use ZHOUYI::ZhanPu;
- 
-   my ( $gnum, $bgnum, $byao, $bgua ) = qigua();
-   jiegua( $gnum, $bgnum, $byao, $bgua )
+      use ZHOUYI::ZhanPu;
+     
+     my ( $gnum, $bgnum, $byao, $bgua ) = qigua();
+     jiegua( $gnum, $bgnum, $byao, $bgua )
     ...
 
  the outer like :
@@ -32,8 +25,8 @@ MD5Check - Use it for init Web files's md5 values of your site(or other dir), an
 
     $ perl -MZHOUYI::ZhanPu  -e 'jieguo(qigua())'
     
-   or just use  
-   $ perl -MMD5Check -e 'pu()'
+     or just use:  
+     $ perl -MZHOUYI::ZhanPu -e 'pu()'
  
 =head1 DESCRIPTION
  
@@ -45,11 +38,11 @@ ZHOUYI-ZhanPu  is not standardized. This module is far from complete.
 
 =head1 Git repo
  
-L<http://github.com/bollwarm/ZHOUYI-ZhanPu>
+  L<http://github.com/bollwarm/ZHOUYI-ZhanPu>
  
 =head1 AUTHOR
  
-orange C<< <bollwarm@ijz.me> >>, L<http://ijz.me>
+  orange C<< <bollwarm@ijz.me> >>, L<http://ijz.me>
  
 =head1 COPYRIGHT AND LICENSE
  
