@@ -13,7 +13,7 @@ our @EXPORT = qw(pu qigua jiegua );
 
 =head1 NAME
 
-ZHOUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge for the future using YI's Gua(卦) or tuan（彖）info!
+ZHOUYI::ZhanPu - A util of ZHOUYI modules，divination to judge for the future using YI's Gua(卦) or tuan（彖）info (周易占卜)!
 
 =head1 VERSION
 
@@ -140,7 +140,7 @@ sub zhanbu {
 
 sub qigua {
     my $znum = initzhishu();
-    printbg( sumyingyan($znum) );
+#    printbg( sumyingyan($znum) );
     my ( $gbnum, $gnum ) = sumgua( sumyingyan($znum) );
     my ( $bgnum, $byao, $bgua ) = biangua( sumyingyan($znum) );
     return ( $gnum, $bgnum, $byao, $bgua );
@@ -202,7 +202,7 @@ sub biangua {
     my ( $ying, $yang, $bianyao ) = @_;
     my ( $gnum, $num ) = sumgua( $ying, $yang, $bianyao );
     my @bnum = split //, $gnum;
-    print "@bnum", "\n";
+#    print "@bnum", "\n";
 
     for ( 0 .. 5 ) {
 
@@ -220,8 +220,8 @@ sub biangua {
 
     my @by = sort keys %{$bianyao};
     my @dy = sort keys %dingyao;
-    print "by : @by", "\n";
-    print "dy : @dy", "\n";
+#    print "by : @by", "\n";
+#    print "dy : @dy", "\n";
 
     given ( scalar @by ) {
         when (1) { $maiyao = $by[0]; $maigua = 1 }
@@ -232,13 +232,13 @@ sub biangua {
         when (6) { $maiyao = "C";    $maigua = 0 }
         default  { $maiyao = "U";    $maigua = 1 }
     }
-    print "Yaobian:", $maiyao, "\n";
-    print "Guabian:", $maigua, "\n";
-    print "@bnum",    "\n";
+#    print "Yaobian:", $maiyao, "\n";
+#    print "Guabian:", $maigua, "\n";
+#    print "@bnum",    "\n";
     my $bnum = join '', @bnum;
 
     #print $bnum,"\n";
-    printgua($bnum);
+#    printgua($bnum);
     my $bbnum = '0b' . $bnum;
     my $dec   = oct $bbnum;
 
@@ -291,9 +291,6 @@ ORANGE, C<< <bollwarm at ijz.me> >>
 Please report any bugs or feature requests to C<bug-zhouyi-zhanpu at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=ZHOUYI-ZhanPu>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
-
-
-
 
 =head1 SUPPORT
 
