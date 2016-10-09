@@ -8,7 +8,7 @@ use utf8;
 binmode( STDOUT, ':encoding(utf8)' );
 
 binmode( STDOUT, ':encoding(utf8)' );
-our @ISA     = qw(Exporter);
+our @ISA    = qw(Exporter);
 our @EXPORT = qw(pu qigua jiegua );
 
 =head1 NAME
@@ -22,7 +22,6 @@ Version 0.01
 =cut
 
 our $VERSION = '0.01';
-
 
 =head1 SYNOPSIS
 
@@ -50,44 +49,43 @@ the outer like :
 =cut
 
 sub pu {
-jiegua( qigua());
-
+    jiegua( qigua() );
 
 }
 
 sub bugaindex {
-my ( @yigua, %yi, %zy, @bagua, @bagua1 );
+    my ( @yigua, %yi, %zy, @bagua, @bagua1 );
 
-@bagua  = qw(kun zhen kan dui gen li xun qian);
-@bagua1 = qw(di lei shui ze shan huo feng tian);
-my @bgindex =
-  qw(tian_tian tian_ze tian_huo tian_lei tian_feng tian_shui tian_shan tian_di ze_tian ze_ze ze_huo ze_lei ze_feng ze_shui ze_shan ze_di huo_tian huo_ze huo_huo huo_lei huo_feng huo_shui huo_shan huo_di lei_tian lei_ze lei_huo lei_lei lei_feng lei_shui lei_shan lei_di feng_tian feng_ze feng_huo feng_lei feng_feng feng_shui feng_shan feng_di shui_tian shui_ze shui_huo shui_lei shui_feng shui_shui shui_shan shui_di shan_tian shan_ze shan_huo shan_lei shan_feng shan_shui shan_shan shan_di di_tian di_ze di_huo di_lei di_feng di_shui di_shan di_di);
-my @num =
-  qw(1 10 13 25 44 6 33 12 43 58  49 17 28 47 31 45 14 38 30 21 50 64 56 35 34 54 55 51 32 40 62 16 9 61 37 42 57 59 53 20 5 60 63 3 48 29 39 8 26 41 21 27 18 4 52 23 11 19 36 24 46 7 15 2);
+    @bagua  = qw(kun zhen kan dui gen li xun qian);
+    @bagua1 = qw(di lei shui ze shan huo feng tian);
+    my @bgindex =
+      qw(tian_tian tian_ze tian_huo tian_lei tian_feng tian_shui tian_shan tian_di ze_tian ze_ze ze_huo ze_lei ze_feng ze_shui ze_shan ze_di huo_tian huo_ze huo_huo huo_lei huo_feng huo_shui huo_shan huo_di lei_tian lei_ze lei_huo lei_lei lei_feng lei_shui lei_shan lei_di feng_tian feng_ze feng_huo feng_lei feng_feng feng_shui feng_shan feng_di shui_tian shui_ze shui_huo shui_lei shui_feng shui_shui shui_shan shui_di shan_tian shan_ze shan_huo shan_lei shan_feng shan_shui shan_shan shan_di di_tian di_ze di_huo di_lei di_feng di_shui di_shan di_di);
+    my @num =
+      qw(1 10 13 25 44 6 33 12 43 58  49 17 28 47 31 45 14 38 30 21 50 64 56 35 34 54 55 51 32 40 62 16 9 61 37 42 57 59 53 20 5 60 63 3 48 29 39 8 26 41 21 27 18 4 52 23 11 19 36 24 46 7 15 2);
 
-@zy{@bgindex} = @num;
-for ( 0 .. 63 ) {
+    @zy{@bgindex} = @num;
+    for ( 0 .. 63 ) {
 
-    my $zindexs = sprintf( "%lo", $_ );
-    push @yigua, $zindexs;
-}
-
-for (@yigua) {
-
-    if (/^\d$/) {
-
-        #print $_,"\n";
-        $yi{$_} = $bagua1[0] . "_" . $bagua1[$_];
-
-    }
-    else {
-        my ( $q, $k ) = split //, $_;
-        $yi{$_} = $bagua1[$q] . "_" . $bagua1[$k];
+        my $zindexs = sprintf( "%lo", $_ );
+        push @yigua, $zindexs;
     }
 
-}
+    for (@yigua) {
 
-return (\%zy,\%yi)
+        if (/^\d$/) {
+
+            #print $_,"\n";
+            $yi{$_} = $bagua1[0] . "_" . $bagua1[$_];
+
+        }
+        else {
+            my ( $q, $k ) = split //, $_;
+            $yi{$_} = $bagua1[$q] . "_" . $bagua1[$k];
+        }
+
+    }
+
+    return ( \%zy, \%yi );
 }
 
 =pod
@@ -101,35 +99,44 @@ using odl explinations of Zhuyi (明.朱熹 《易学启蒙》解卦)
 五爻变，以变卦之不变爻爻辞断；
 六爻变，以变卦之卦辞断，乾坤两卦则以「用」辞断。
 =cut
+
 sub jiegua {
 
-my ( $ogua, $bgua, $myao, $mguo ) = @_;
-        my $int=$mguo? $ogua:$bgua;
-        given ($myao) {
-        when ('B') { zhanbu($ogua,-1);zhanbu($bgua,-1); }
-        when ('C') { ($ogua==0) or ($ogua==63)? zhanbu($ogua,6): zhanbu($ogua,-1) }
-        when ('U') { zhanbu($ogua,-1) }
-        default  { zhanbu($int,$myao) }
+    my ( $ogua, $bgua, $myao, $mguo ) = @_;
+    my $int = $mguo ? $ogua : $bgua;
+    given ($myao) {
+        when ('B') { zhanbu( $ogua, -1 ); zhanbu( $bgua, -1 ); }
+        when ('C') {
+            ( $ogua == 0 )
+              or ( $ogua == 63 )
+              ? zhanbu( $ogua, 6 )
+              : zhanbu( $ogua, -1 )
+        }
+        when ('U') { zhanbu( $ogua, -1 ) }
+        default    { zhanbu( $int,  $myao ) }
     }
-
 
 }
 
-
 sub zhanbu {
-    my ($zy,$yi)=bugaindex();
+    my ( $zy,  $yi )   = bugaindex();
     my ( $gua, $myao ) = @_;
-    my $sint = sprintf( "%lo", $gua );
+    my $sint   = sprintf( "%lo", $gua );
     my $reply  = ZhouyiEx( $zy->{ $yi->{$sint} } );
     my $reply1 = outGua($reply);
     given ($myao) {
-        when (-1) { print "\n卦：",$reply1,   "\n";  }
-        when (6) { my ( $replyyao, $syao ) = maixyao( $reply, $myao );print "\n爻：",$syao->[6], "\n"  }
-        default  { my ( $replyyao, $syao ) = maixyao( $reply, $myao );print "\n卦：",$reply1, "\n";print "爻：",$replyyao, "\n" }
+        when (-1) { print "\n卦：", $reply1, "\n"; }
+        when (6) {
+            my ( $replyyao, $syao ) = maixyao( $reply, $myao );
+            print "\n爻：", $syao->[6], "\n"
+        }
+        default {
+            my ( $replyyao, $syao ) = maixyao( $reply, $myao );
+            print "\n卦：", $reply1,   "\n";
+            print "爻：",   $replyyao, "\n"
+        }
     }
 }
-
-
 
 sub qigua {
     my $znum = initzhishu();
@@ -199,7 +206,7 @@ sub biangua {
 
     for ( 0 .. 5 ) {
 
-     $bnum[$_]=$bnum[$_]?0:1 if exists $bianyao->{$_};
+        $bnum[$_] = $bnum[$_] ? 0 : 1 if exists $bianyao->{$_};
 
     }
 
@@ -209,7 +216,7 @@ sub biangua {
         next if exists $bianyao->{$_};
         $dingyao{$_} = 1;
     }
-    my ($maiyao, $maigua);
+    my ( $maiyao, $maigua );
 
     my @by = sort keys %{$bianyao};
     my @dy = sort keys %dingyao;
@@ -234,6 +241,7 @@ sub biangua {
     printgua($bnum);
     my $bbnum = '0b' . $bnum;
     my $dec   = oct $bbnum;
+
     #print $dec,"\n";
     return ( $dec, $maiyao, $maigua );
 
@@ -245,10 +253,10 @@ sub printgua {
     my @bnum = split //, $ying;
 
     #print "@bnum","\n";
-    my $n=5;
+    my $n = 5;
     for ( 0 .. 5 ) {
-        $n=5-$_;
-      $bnum[$_]?(print $n+ 1, ":— —\n"):(print $n+ 1, ":—--\n");
+        $n = 5 - $_;
+        $bnum[$_] ? ( print $n+ 1, ":— —\n" ) : ( print $n+ 1, ":—--\n" );
     }
 
 }
@@ -273,8 +281,6 @@ sub printbg {
 
     print "\n\n";
 }
-
-
 
 =head1 AUTHOR
 
@@ -335,4 +341,4 @@ This library is free software; you can redistribute it and/or modify it under th
 
 =cut
 
-1; # End of ZHOUYI::ZhanPu
+1;    # End of ZHOUYI::ZhanPu
