@@ -5,9 +5,7 @@ use strict;
 use warnings;
 use ZHOUYI;
 use utf8;
-binmode( STDOUT, ':encoding(utf8)' );
 
-binmode( STDOUT, ':encoding(utf8)' );
 our @ISA    = qw(Exporter);
 our @EXPORT = qw(pu qigua jiegua );
 
@@ -17,11 +15,11 @@ ZHOUYI::ZhanPu - A util of ZHOUYI modules，divination to judge for the future u
 
 =head1 VERSION
 
-Version 0.01
+Version 0.03
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
@@ -32,7 +30,7 @@ Perhaps a little code snippet.
 use ZHOUYI::ZhanPu;
 
 my ( $gnum, $bgnum, $byao, $bgua ) = qigua();
-jiegua( $gnum, $bgnum, $byao, $bgua )
+print jiegua( $gnum, $bgnum, $byao, $bgua )
     ...
 
 the outer like :
@@ -48,8 +46,10 @@ the outer like :
 
 =cut
 
+# the main outing function.
+
 sub pu {
-    jiegua( qigua() );
+  return jiegua( qigua() );
 
 }
 
@@ -89,7 +89,11 @@ sub bugaindex {
 }
 
 =pod
-using odl explinations of Zhuyi (明.朱熹 《易学启蒙》解卦)
+
+the explanations functions - input the guanum and it's 
+changs trend from the yao's yinyang.
+
+using old explinations of Zhuyi (明.朱熹 《易学启蒙》解卦)
 
 六爻不变，以本卦卦辞断；
 一爻变，以本卦变爻爻辞断；
@@ -104,18 +108,19 @@ sub jiegua {
 
     my ( $ogua, $bgua, $myao, $mguo ) = @_;
     my $int = $mguo ? $ogua : $bgua;
+    my $msg;
     given ($myao) {
-        when ('B') { zhanbu( $ogua, -1 ); zhanbu( $bgua, -1 ); }
+        when ('B') { $msg=zhanbu( $ogua, -1 );  $msg.=zhanbu( $bgua, -1 ); }
         when ('C') {
             ( $ogua == 0 )
               or ( $ogua == 63 )
-              ? zhanbu( $ogua, 6 )
-              : zhanbu( $ogua, -1 )
+              ? ($msg=zhanbu( $ogua, 6 ))
+              : ($msg=zhanbu( $ogua, -1 ))
         }
-        when ('U') { zhanbu( $ogua, -1 ) }
-        default    { zhanbu( $int,  $myao ) }
+        when ('U') { $msg=zhanbu( $ogua, -1 ) }
+        default    { $msg=zhanbu( $int,  $myao ) }
     }
-
+   return $msg;
 }
 
 sub zhanbu {
@@ -124,18 +129,22 @@ sub zhanbu {
     my $sint   = sprintf( "%lo", $gua );
     my $reply  = ZhouyiEx( $zy->{ $yi->{$sint} } );
     my $reply1 = outGua($reply);
+    my $wydsg;
     given ($myao) {
-        when (-1) { print "\n卦：", $reply1, "\n"; }
+        when (-1) { $wydsg="\n卦：".$reply1. "\n"; }
         when (6) {
             my ( $replyyao, $syao ) = maixyao( $reply, $myao );
-            print "\n爻：", $syao->[6], "\n"
+            $wydsg= "爻：".$syao->[6]."\n"
         }
         default {
             my ( $replyyao, $syao ) = maixyao( $reply, $myao );
-            print "\n卦：", $reply1,   "\n";
-            print "爻：",   $replyyao, "\n"
+            $wydsg= "\n卦：". $reply1. "\n";
+            $wydsg.="爻：". $replyyao. "\n"
         }
     }
+   
+   return $wydsg;
+
 }
 
 sub qigua {

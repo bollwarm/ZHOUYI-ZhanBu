@@ -9,7 +9,7 @@ UYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge for 
       use ZHOUYI::ZhanPu;
      
      my ( $gnum, $bgnum, $byao, $bgua ) = qigua();
-     jiegua( $gnum, $bgnum, $byao, $bgua )
+     print  jiegua( $gnum, $bgnum, $byao, $bgua )
     ...
 
  the outer like :
@@ -23,10 +23,10 @@ UYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge for 
     
     # You just using in  oneline as you like:
 
-    $ perl -MZHOUYI::ZhanPu  -e 'jieguo(qigua())'
+    $ perl -MZHOUYI::ZhanPu  -pe 'jieguo(qigua())'
     
      or just use:  
-     $ perl -MZHOUYI::ZhanPu -e 'pu()'
+     $ perl -MZHOUYI::ZhanPu -pe 'print pu()'
  
 =head1 DESCRIPTION
  
