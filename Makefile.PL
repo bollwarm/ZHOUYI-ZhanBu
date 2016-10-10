@@ -18,6 +18,7 @@ WriteMakefile(
         'Test::More' => 0,
     },
     PREREQ_PM => {
+        'ZHOUYI'          => 0.07,
         #'ABC'              => 1.6,
         #'Foo::Bar::Module' => 5.0401,
     },
