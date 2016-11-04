@@ -19,7 +19,7 @@ Version 0.03
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =head1 SYNOPSIS
 
@@ -128,18 +128,19 @@ sub zhanbu {
     my ( $gua, $myao ) = @_;
     my $sint   = sprintf( "%lo", $gua );
     my $reply  = ZhouyiEx( $zy->{ $yi->{$sint} } );
-    my $reply1 = outGua($reply);
+    my $reply1 = outtuan($reply);
+    my ( $replyyao, $syao ) = maixyao( $reply, $myao );
+    my ( $replyxiang, $sxiang ) = maixiang( $reply, $myao ); 
+       $reply1.=$sxiang->[0];
     my $wydsg;
     given ($myao) {
         when (-1) { $wydsg="\n卦：".$reply1. "\n"; }
         when (6) {
-            my ( $replyyao, $syao ) = maixyao( $reply, $myao );
-            $wydsg= "爻：".$syao->[6]."\n"
+            $wydsg= "爻：".$syao->[6]."\n    ".$sxiang->[7];
         }
         default {
-            my ( $replyyao, $syao ) = maixyao( $reply, $myao );
-            $wydsg= "\n卦：". $reply1. "\n";
-            $wydsg.="爻：". $replyyao. "\n"
+            $wydsg= "\n卦：". $reply1. "\n\n";
+            $wydsg.= "爻：".$replyyao."\n   ".$replyxiang;
         }
     }
    

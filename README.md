@@ -23,7 +23,7 @@ UYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge for 
     
     # You just using in  oneline as you like:
 
-    $ perl -MZHOUYI::ZhanPu  -pe 'jieguo(qigua())'
+    $ perl -MZHOUYI::ZhanPu  -pe 'jiegua(qigua())'
     
      or just use:  
      $ perl -MZHOUYI::ZhanPu -pe 'print pu()'
