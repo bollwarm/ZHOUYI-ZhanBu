@@ -24,7 +24,7 @@ ZHUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge fo
      爻：六五：恆其德，貞婦人吉，夫子凶。
     《象》曰：婦人貞吉，從一而終也。夫子制義，從婦凶也
  
-## You just using in  oneline as you like:
+#### You just using in  oneline as you like:
 
     $ perl -MZHOUYI::ZhanPu  -pe 'jiegua(qigua())'
     
@@ -32,9 +32,10 @@ ZHUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge fo
     
      $ perl -MZHOUYI::ZhanPu -pe 'print pu()'
 
-## 利用Mojo::webqq插件形式交互式占卜。插件example/Pu.pm（关于Mojo::webqq详见 https://github.com/sjdy521/Mojo-Webqq）
+#### 利用Mojo::webqq插件形式交互式占卜。
+####  Using this plugin I Successful predicted the United States election。
 
-##  Using this plugin I Successful predicted the United States election。
+    插件example/Pu.pm（关于Mojo::webqq详见 https://github.com/sjdy521/Mojo-Webqq）
 
    ![成功预测美帝大选](example/zhanpu.jpg)
 
