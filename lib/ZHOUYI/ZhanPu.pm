@@ -1,6 +1,5 @@
 package ZHOUYI::ZhanPu;
 
-use 5.010;
 use strict;
 use warnings;
 use ZHOUYI;
@@ -15,17 +14,14 @@ ZHOUYI::ZhanPu - A util of ZHOUYI modules，divination to judge for the future u
 
 =head1 VERSION
 
-Version 0.03
+Version 0.06
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.06';
 
 =head1 SYNOPSIS
 
-Quick summary of what the module does.
-
-Perhaps a little code snippet.
 
 use ZHOUYI::ZhanPu;
 
@@ -109,17 +105,27 @@ sub jiegua {
     my ( $ogua, $bgua, $myao, $mguo ) = @_;
     my $int = $mguo ? $ogua : $bgua;
     my $msg;
-    given ($myao) {
-        when ('B') { $msg=zhanbu( $ogua, -1 );  $msg.=zhanbu( $bgua, -1 ); }
-        when ('C') {
-            ( $ogua == 0 )
-              or ( $ogua == 63 )
+    if  ($myao eq 'B'){
+        
+         $msg=zhanbu( $ogua, -1 ); 
+         $msg.="变";
+         $msg.=zhanbu( $bgua, -1 );
+
+      }elsif($myao eq 'C') {
+              
+        ( $ogua == 0 )or ( $ogua == 63 )
               ? ($msg=zhanbu( $ogua, 6 ))
               : ($msg=zhanbu( $ogua, -1 ))
-        }
-        when ('U') { $msg=zhanbu( $ogua, -1 ) }
-        default    { $msg=zhanbu( $int,  $myao ) }
-    }
+
+      }elsif($myao eq 'U') {
+      
+        $msg=zhanbu( $ogua, -1 ) 
+     
+     }else {
+      
+        $msg=zhanbu( $int,  $myao );
+     
+     } 
    return $msg;
 }
 
@@ -133,17 +139,17 @@ sub zhanbu {
     my ( $replyxiang, $sxiang ) = maixiang( $reply, $myao ); 
        $reply1.=$sxiang->[0];
     my $wydsg;
-    given ($myao) {
-        when (-1) { $wydsg="\n卦：".$reply1. "\n"; }
-        when (6) {
-            $wydsg= "爻：".$syao->[6]."\n    ".$sxiang->[7];
+          
+        if($myao == -1) {
+
+         $wydsg="卦：".$reply1. "\n\n";       
+ 
+        }elsif($myao == 6 ) {
+         $wydsg= "爻：".$syao->[6]."\n".$sxiang->[7];
+        }else {
+         $wydsg= "卦：". $reply1. "\n\n";
+         $wydsg.= "爻：".$replyyao."\n".$replyxiang."\n";
         }
-        default {
-            $wydsg= "\n卦：". $reply1. "\n\n";
-            $wydsg.= "爻：".$replyyao."\n   ".$replyxiang;
-        }
-    }
-   
    return $wydsg;
 
 }
@@ -233,15 +239,16 @@ sub biangua {
 #    print "by : @by", "\n";
 #    print "dy : @dy", "\n";
 
-    given ( scalar @by ) {
-        when (1) { $maiyao = $by[0]; $maigua = 1 }
-        when (2) { $maiyao = $by[1]; $maigua = 1 }
-        when (3) { $maiyao = "B";    $maigua = 1 }
-        when (4) { $maiyao = $dy[0]; $maigua = 0 }
-        when (5) { $maiyao = $dy[0]; $maigua = 0 }
-        when (6) { $maiyao = "C";    $maigua = 0 }
-        default  { $maiyao = "U";    $maigua = 1 }
-    }
+    my $bunum=scalar @by;
+
+    if($bunum == 1){$maiyao = $by[0]; $maigua = 1}
+    elsif($bunum == 2){ $maiyao = $by[1]; $maigua = 1 }
+    elsif($bunum == 3){ $maiyao = "B";    $maigua = 1 }
+    elsif($bunum == 4){ $maiyao = $dy[0]; $maigua = 0 }
+    elsif($bunum == 5){ $maiyao = $dy[0]; $maigua = 0 }
+    elsif($bunum == 6){ $maiyao = "C";    $maigua = 0 }
+    else {$maiyao = "U";    $maigua = 1 }
+
 #    print "Yaobian:", $maiyao, "\n";
 #    print "Guabian:", $maigua, "\n";
 #    print "@bnum",    "\n";
