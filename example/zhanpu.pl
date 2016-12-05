@@ -1,4 +1,5 @@
-      use ZHOUYI::ZhanPu;
+     use Encode; 
+     use ZHOUYI::ZhanPu;
 
       my ( $gnum, $bgnum, $byao, $bgua ) = qigua();
-      print  jiegua( $gnum, $bgnum, $byao, $bgua )
+      print Encode::encode("utf8",jiegua( $gnum, $bgnum, $byao, $bgua ));
