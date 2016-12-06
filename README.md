@@ -1,10 +1,10 @@
 
-###head1 ZHOUYI-ZhanPu
+## ZHOUYI-ZhanPu
  
 ZHUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge for the future using YI's Gua(卦) or tuan（彖）info!
  
  
-### SYNOPSIS
+## SYNOPSIS
  
       use ZHOUYI::ZhanPu;
      
@@ -12,7 +12,7 @@ ZHUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge fo
       print  jiegua( $gnum, $bgnum, $byao, $bgua )
       ...
 
- the outer like :
+### the outer like :
 
       卦：《易經》第三十二卦恆雷風恆震上巽下
 
@@ -24,7 +24,7 @@ ZHUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge fo
      爻：六五：恆其德，貞婦人吉，夫子凶。
     《象》曰：婦人貞吉，從一而終也。夫子制義，從婦凶也
  
-#### You just using in  oneline as you like:
+#### You can using in oneline as you like:
 
     $ perl -MZHOUYI::ZhanPu  -pe 'jiegua(qigua())'
     
@@ -32,7 +32,8 @@ ZHUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge fo
     
      $ perl -MZHOUYI::ZhanPu -pe 'print pu()'
 
-#### 利用Mojo::webqq插件形式交互式占卜。
+## 利用Mojo::webqq插件形式交互式占卜。
+
 ####  Using this plugin I Successful predicted the United States election。
 
     插件example/Pu.pm（关于Mojo::webqq详见 https://github.com/sjdy521/Mojo-Webqq）
@@ -53,7 +54,7 @@ ZHUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge fo
   结果非常靠谱。
 
  
-### DESCRIPTION
+## DESCRIPTION
  
   ZHOUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge for the future using YI's Gua(卦) or tuan（彖）info!
  
@@ -61,21 +62,18 @@ ZHUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge fo
  
  
 
-### Git repo
+## Git repo
  
     L<http://github.com/bollwarm/ZHOUYI-ZhanPu>
  
-### AUTHOR
+## AUTHOR
  
     orange C<< <bollwarm@ijz.me> >>, L<http://ijz.me>
  
-###COPYRIGHT AND LICENSE
+## COPYRIGHT AND LICENSE
  
 Copyright (C) 2016 linzhe
  
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
- 
- 
-=cut
 

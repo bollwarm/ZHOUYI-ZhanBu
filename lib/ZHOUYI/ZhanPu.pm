@@ -3,9 +3,12 @@ package ZHOUYI::ZhanPu;
 use strict;
 use warnings;
 use ZHOUYI;
+use utf8;
 
 our @ISA    = qw(Exporter);
 our @EXPORT = qw(pu qigua jiegua );
+
+=encoding utf8
 
 =head1 NAME
 
@@ -13,11 +16,11 @@ ZHOUYI::ZhanPu - A util of ZHOUYI modules，divination to judge for the future u
 
 =head1 VERSION
 
-Version 0.07
+Version 0.08
 
 =cut
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 =head1 SYNOPSIS
 
