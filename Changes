@@ -1,9 +1,8 @@
 Revision history for ZHOUYI-ZhanPu
 
-0.08    2016-12-06/16
+0.09    2016-12-07/18
 
-* fix pod character encoding.
-* fix example outing garbled. 
+* doc dity 
 
 0.07    2016-12-05/17
 * Code dity .
@@ -19,7 +18,9 @@ Revision history for ZHOUYI-ZhanPu
 
 0.04    2016-11-04/20
 
-* add tuan and xiang part.
+* add tuan and xanig part.
+d character encoding.
+* fix example outing garbled.
 
 0.03    2016-10-10/11
 

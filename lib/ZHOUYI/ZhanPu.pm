@@ -16,11 +16,11 @@ ZHOUYI::ZhanPu - A util of ZHOUYI modules，divination to judge for the future u
 
 =head1 VERSION
 
-Version 0.08
+Version 0.09
 
 =cut
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 =head1 SYNOPSIS
 
@@ -88,18 +88,21 @@ sub bugaindex {
 
 =pod
 
+=head1 Explanations for Gua(解卦)
+
 the explanations functions - input the guanum and it's 
 changs trend from the yao's yinyang.
 
 using old explinations of Zhuyi (明.朱熹 《易学启蒙》解卦)
 
-六爻不变，以本卦卦辞断；
-一爻变，以本卦变爻爻辞断；
-两爻变，以本卦两个爻辞断，但以上者为主；
-三爻变，以本卦与变卦卦辞断；本卦为贞（体），变卦为悔（用）；
-四爻变，以变卦之两不变爻爻辞断，但以下者为主；
-五爻变，以变卦之不变爻爻辞断；
-六爻变，以变卦之卦辞断，乾坤两卦则以「用」辞断。
+ 六爻不变，以本卦卦辞断；
+ 一爻变，以本卦变爻爻辞断；
+ 两爻变，以本卦两个爻辞断，但以上者为主；
+ 三爻变，以本卦与变卦卦辞断；本卦为贞（体），变卦为悔（用）；
+ 四爻变，以变卦之两不变爻爻辞断，但以下者为主；
+ 五爻变，以变卦之不变爻爻辞断；
+ 六爻变，以变卦之卦辞断，乾坤两卦则以「用」辞断。
+
 =cut
 
 sub jiegua {
