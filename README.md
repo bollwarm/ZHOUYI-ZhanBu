@@ -64,15 +64,17 @@ ZHUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge fo
 
 ## Git repo
  
-    L<http://github.com/bollwarm/ZHOUYI-ZhanPu>
+  [Github](http://github.com/bollwarm/ZHOUYI-ZhanPu)
+  
+  [oschina](https://git.oschina.net/ijz/ZHOUYI-ZhanPu)
  
 ## AUTHOR
  
-    orange C<< <bollwarm@ijz.me> >>, L<http://ijz.me>
- 
+    [orange](bollwarm@ijz.me), [虫虫之家Blog](http://ijz.me)
+
 ## COPYRIGHT AND LICENSE
  
-Copyright (C) 2016 linzhe
+Copyright (C) 2016 桔子
  
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
