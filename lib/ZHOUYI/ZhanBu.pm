@@ -1,4 +1,4 @@
-package ZHOUYI::ZhanPu;
+package ZHOUYI::ZhanBu;
 
 use strict;
 use warnings;
@@ -12,7 +12,7 @@ our @EXPORT = qw(pu qigua jiegua );
 
 =head1 NAME
 
-ZHOUYI::ZhanPu - A util of ZHOUYI modules，divination to judge for the future using YI's Gua(卦) or tuan（彖）info (周易占卜)!
+ZHOUYI::ZhanBu - A util of ZHOUYI modules，divination to judge for the future using YI's Gua(卦) or tuan（彖）info (周易占卜)!
 
 =head1 VERSION
 
@@ -25,7 +25,7 @@ our $VERSION = '0.09';
 =head1 SYNOPSIS
 
 
-use ZHOUYI::ZhanPu;
+use ZHOUYI::ZhanBu;
 
 my ( $gnum, $bgnum, $byao, $bgua ) = qigua();
 print jiegua( $gnum, $bgnum, $byao, $bgua )
@@ -311,39 +311,39 @@ ORANGE, C<< <bollwarm at ijz.me> >>
 =head1 BUGS
 
 Please report any bugs or feature requests to C<bug-zhouyi-zhanpu at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=ZHOUYI-ZhanPu>.  I will be notified, and then you'll
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=ZHOUYI-ZhanBu>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
 =head1 SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc ZHOUYI::ZhanPu
+    perldoc ZHOUYI::ZhanBu
 
 
 You can also look for information at:
 
 =head1 Git repo
 
-Lhttps://github.com/bollwarm/ZHOUYI-ZhanPu
+Lhttps://github.com/bollwarm/ZHOUYI-ZhanBu
 
 =over 4
 
 =item * RT: CPAN's request tracker (report bugs here)
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=ZHOUYI-ZhanPu>
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=ZHOUYI-ZhanBu>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
-L<http://annocpan.org/dist/ZHOUYI-ZhanPu>
+L<http://annocpan.org/dist/ZHOUYI-ZhanBu>
 
 =item * CPAN Ratings
 
-L<http://cpanratings.perl.org/d/ZHOUYI-ZhanPu>
+L<http://cpanratings.perl.org/d/ZHOUYI-ZhanBu>
 
 =item * Search CPAN
 
-L<http://search.cpan.org/dist/ZHOUYI-ZhanPu/>
+L<http://search.cpan.org/dist/ZHOUYI-ZhanBu/>
 
 =back
 
@@ -360,4 +360,4 @@ This library is free software; you can redistribute it and/or modify it under th
 
 =cut
 
-1;    # End of ZHOUYI::ZhanPu
+1;    # End of ZHOUYI::ZhanBu

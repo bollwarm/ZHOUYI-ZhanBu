@@ -4,10 +4,10 @@ use warnings;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-    NAME             => 'ZHOUYI::ZhanPu',
+    NAME             => 'ZHOUYI::ZhanBu',
     AUTHOR           => q{ORANGE <bollwarm@ijz.me>},
-    VERSION_FROM     => 'lib/ZHOUYI/ZhanPu.pm',
-    ABSTRACT_FROM    => 'lib/ZHOUYI/ZhanPu.pm',
+    VERSION_FROM     => 'lib/ZHOUYI/ZhanBu.pm',
+    ABSTRACT_FROM    => 'lib/ZHOUYI/ZhanBu.pm',
     LICENSE          => 'Perl',
     PL_FILES         => {},
     MIN_PERL_VERSION => 5.006,
@@ -23,5 +23,5 @@ WriteMakefile(
         #'Foo::Bar::Module' => 5.0401,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean => { FILES => 'ZHOUYI-ZhanPu-*' },
+    clean => { FILES => 'ZHOUYI-ZhanBu-*' },
 );

@@ -1,12 +1,12 @@
 
-## ZHOUYI-ZhanPu
+## ZHOUYI-ZhanBu
  
-ZHUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge for the future using YI's Gua(卦) or tuan（彖）info!
+ZHUYI::ZhanBu (周易占卜) - A util of ZHOUYI modules，divination to judge for the future using YI's Gua(卦) or tuan（彖）info!
  
  
 ## SYNOPSIS
  
-      use ZHOUYI::ZhanPu;
+      use ZHOUYI::ZhanBu;
      
       my ( $gnum, $bgnum, $byao, $bgua ) = qigua();
       print  jiegua( $gnum, $bgnum, $byao, $bgua )
@@ -26,11 +26,11 @@ ZHUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge fo
  
 #### You can using in oneline as you like:
 
-    $ perl -MZHOUYI::ZhanPu  -pe 'jiegua(qigua())'
+    $ perl -MZHOUYI::ZhanBu  -pe 'jiegua(qigua())'
     
  #or just use:  
     
-     $ perl -MZHOUYI::ZhanPu -pe 'print pu()'
+     $ perl -MZHOUYI::ZhanBu -pe 'print pu()'
 
 ## 利用Mojo::webqq插件形式交互式占卜。
 
@@ -56,17 +56,17 @@ ZHUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge fo
  
 ## DESCRIPTION
  
-  ZHOUYI::ZhanPu (周易占卜) - A util of ZHOUYI modules，divination to judge for the future using YI's Gua(卦) or tuan（彖）info!
+  ZHOUYI::ZhanBu (周易占卜) - A util of ZHOUYI modules，divination to judge for the future using YI's Gua(卦) or tuan（彖）info!
  
-  ZHOUYI-ZhanPu  is not standardized. This module is far from complete.
+  ZHOUYI-ZhanBu  is not standardized. This module is far from complete.
  
  
 
 ## Git repo
  
-  [Github](http://github.com/bollwarm/ZHOUYI-ZhanPu)
+  [Github](http://github.com/bollwarm/ZHOUYI-ZhanBu)
   
-  [oschina](https://git.oschina.net/ijz/ZHOUYI-ZhanPu)
+  [oschina](https://git.oschina.net/ijz/ZHOUYI-ZhanBu)
  
 ## AUTHOR
  
